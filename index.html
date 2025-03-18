@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f4f4f9;
+            padding: 20px;
+        }
+        #quote {
+            font-size: 24px;
+            color: #333;
+            margin-top: 20px;
+            font-weight: bold;
+        }
+        #clickButton {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 15px 32px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 8px;
+        }
+        #clickButton:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <h1>Jeu de clics - youssef</h1>
+    <button id="clickButton">Cliquez ici pour découvrir une citation inspirante</button>
+    <div id="quote"></div>
+
+    <script>
+
+        const quotes = [
+            "L'individu est la somme de ses expériences.",
+            "La communauté est plus forte que l'individu seul.",
+            "Un groupe unifié est plus puissant qu'une collection d'individus.",
+            "Chaque individu peut changer le monde, mais ensemble, nous sommes une force.",
+            "L'unité fait la force, mais chaque individu joue un rôle crucial."
+        ];
+
+        const quoteElement = document.getElementById('quote');
+        const clickButton = document.getElementById('clickButton');
+
+
+        function displayRandomQuote() {
+            const randomIndex = Math.floor(Math.random() * quotes.length);
+            quoteElement.textContent = quotes[randomIndex];
+        }
+
+        clickButton.addEventListener('click', displayRandomQuote);
+    </script>
+</body>
+</html>
+<script src="https://cdn.jsdelivr.net/npm/phaser@3.55.2/dist/phaser.min.js"></script>
